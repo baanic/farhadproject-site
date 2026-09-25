@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://farhadproject.ir/sitemap-index.xml
