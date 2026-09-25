@@ -1,0 +1,163 @@
+---
+const { project } = Astro.props;
+
+const stats = [
+  {
+    value: project.area_m2.toLocaleString("fa-IR"),
+    unit: "مترمربع",
+    label: "زیربنا",
+    color: "#5C7A5C",
+  },
+  {
+    value: "۱۸",
+    unit: "ماه",
+    label: "مدت اجرا",
+    color: "#2D5C8A",
+  },
+  {
+    value: "۱۳۳.۷",
+    unit: "میلیارد تومان",
+    label: "مبلغ قرارداد",
+    color: "#D89B5A",
+  },
+  {
+    value: "۵",
+    unit: "زون",
+    label: "بلوک‌بندی",
+    color: "#5A4A7A",
+  },
+];
+---
+
+<section style="
+  background: #FFFFFF;
+  padding: 80px 24px;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- عنوان بخش -->
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    ">
+      <div style="
+        width: 8px;
+        height: 48px;
+        background: #B8763E;
+        border-radius: 4px;
+      "></div>
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 4px;
+        ">
+          FEATURED PROJECT
+        </p>
+        <h2 style="
+          color: #1B2A4A;
+          font-size: 32px;
+          margin: 0;
+        ">
+          پروژه شاخص
+        </h2>
+      </div>
+    </div>
+
+    <!-- تصویر پروژه -->
+    <div style="
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 48px;
+      background: #F5F0E6;
+    ">
+      <img
+        src="/images/portfolio/project-exterior.jpg"
+        alt={project.title_fa}
+        style="
+          width: 100%;
+          height: auto;
+          display: block;
+          max-height: 500px;
+          object-fit: cover;
+        "
+      />
+    </div>
+
+    <!-- عنوان و توضیح -->
+    <h3 style="
+      color: #1B2A4A;
+      font-size: 28px;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    ">
+      {project.title_fa}
+    </h3>
+
+    <p style="
+      color: #4A5568;
+      font-size: 17px;
+      line-height: 2;
+      margin-bottom: 48px;
+      max-width: 800px;
+    ">
+      پروژه تکمیل فاز ۱ یک ساختمان فنی و اداری با زیربنای حدود ۱۱,۰۰۰ مترمربع، شامل ۴ استودیو رادیویی، ۱ استودیو تلویزیونی، اتاق‌های کنترل، آرشیو، تحریریه خبر و دفاتر اداری. مبلغ قرارداد حدود ۱۳۳.۷ میلیارد تومان و مدت اجرا ۱۸ ماه بود. این پروژه با موفقیت تحویل داده شد و هم‌اکنون در حال بهره‌برداری است.
+    </p>
+
+    <!-- کارت‌های آمار -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    " class="stats-grid">
+      {stats.map((stat) => (
+        <div style={`
+          background: ${stat.color};
+          color: #F5F0E6;
+          padding: 32px 24px;
+          border-radius: 12px;
+          text-align: center;
+        `}>
+          <div style="
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+          ">
+            {stat.value}
+          </div>
+          <div style="
+            font-size: 13px;
+            opacity: 0.85;
+            margin-bottom: 16px;
+          ">
+            {stat.unit}
+          </div>
+          <div style="
+            font-size: 14px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(245, 240, 230, 0.2);
+          ">
+            {stat.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .stats-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

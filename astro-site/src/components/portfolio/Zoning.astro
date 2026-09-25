@@ -1,0 +1,190 @@
+---
+const blocks = [
+  {
+    name: "بلوک A",
+    subtitle: "فنی / استودیو",
+    area: "۳,۵۰۰",
+    color: "#8B6F47",
+    features: [
+      "۴ استودیو رادیویی",
+      "۱ استودیو تلویزیونی",
+      "اتاق‌های کنترل و رژی",
+      "اتاق‌های ادیت و بازشنوایی",
+    ],
+  },
+  {
+    name: "بلوک B1",
+    subtitle: "لابی / عمومی",
+    area: "۸۰۰",
+    color: "#D89B5A",
+    features: [
+      "لابی استراحت افراد فنی",
+      "کافه کتاب",
+      "اتاق‌های گریم",
+      "سرویس‌های عمومی",
+    ],
+  },
+  {
+    name: "بلوک B2",
+    subtitle: "اداری / فنی",
+    area: "۴,۲۰۰",
+    color: "#2D5C8A",
+    features: [
+      "۲۲ اتاق اداری",
+      "۲۲ اتاق اداری فنی",
+      "اتاق‌های پایش و کنترل",
+      "فضاهای پشتیبانی",
+    ],
+  },
+  {
+    name: "بلوک B3",
+    subtitle: "تحریریه / فرهنگی",
+    area: "۱,۸۰۰",
+    color: "#5A4A7A",
+    features: [
+      "تحریریه خبر",
+      "کتابخانه",
+      "اتاق‌های گریم",
+      "محوطه فضای سبز",
+    ],
+  },
+];
+---
+
+<section style="
+  background: #F5F0E6;
+  padding: 80px 24px;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- عنوان -->
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    ">
+      <div style="
+        width: 8px;
+        height: 48px;
+        background: #B8763E;
+        border-radius: 4px;
+      "></div>
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 4px;
+        ">
+          ZONING
+        </p>
+        <h2 style="
+          color: #1B2A4A;
+          font-size: 32px;
+          margin: 0;
+        ">
+          زون‌بندی پروژه
+        </h2>
+      </div>
+    </div>
+
+    <!-- کارت‌های بلوک -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    " class="zoning-grid">
+      {blocks.map((block) => (
+        <div style="
+          background: #FFFFFF;
+          border-radius: 16px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        ">
+          <!-- نوار رنگی بلوک -->
+          <div style={`
+            background: ${block.color};
+            color: #F5F0E6;
+            padding: 32px;
+            position: relative;
+          `}>
+            <div style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 16px;
+            ">
+              <h3 style="
+                font-size: 32px;
+                margin: 0;
+                line-height: 1;
+              ">
+                {block.name}
+              </h3>
+              <div style="
+                font-size: 13px;
+                opacity: 0.85;
+                text-align: left;
+              ">
+                <div>{block.area}</div>
+                <div style="font-size: 11px;">مترمربع</div>
+              </div>
+            </div>
+
+            <p style="
+              font-size: 15px;
+              margin: 0;
+              opacity: 0.9;
+            ">
+              {block.subtitle}
+            </p>
+          </div>
+
+          <!-- فهرست ویژگی‌ها -->
+          <div style="
+            padding: 24px 32px 32px;
+            flex: 1;
+          ">
+            <ul style="
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            ">
+              {block.features.map((feature) => (
+                <li style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 12px;
+                  font-size: 14px;
+                  color: #1C1C1C;
+                  line-height: 1.7;
+                ">
+                  <span style={`
+                    color: ${block.color};
+                    font-weight: 700;
+                    flex-shrink: 0;
+                  `}>
+                    ▪
+                  </span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .zoning-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
