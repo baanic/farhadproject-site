@@ -1,6 +1,14 @@
 ---
-const title = "پرتفولیو فرهاد";
-const subtitle = "دفتر فنی | کنترل پروژه | متره و برآورد | آکوستیک";
+import masterData from "../data/master_data.json";
+import Hero from "../components/Hero.astro";
+
+const project = masterData.projects[0];
+const stats = [
+  { label: "زیربنا", value: `${project.area_m2.toLocaleString("fa-IR")} مترمربع` },
+  { label: "مدت اجرا", value: `${project.total_duration_months} ماه` },
+  { label: "مبلغ قرارداد", value: project.contract_amount_display_fa },
+  { label: "وضعیت", value: project.status_fa },
+];
 ---
 
 <!DOCTYPE html>
@@ -8,16 +16,15 @@ const subtitle = "دفتر فنی | کنترل پروژه | متره و برآو
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
+    <title>{project.title_fa}</title>
   </head>
   <body>
-    <main style="font-family: Tahoma; text-align: center; padding: 60px 20px; direction: rtl;">
-      <h1 style="color: #1B2A4A; font-size: 48px; margin-bottom: 16px;">
-        {title}
-      </h1>
-      <p style="color: #B8763E; font-size: 20px;">
-        {subtitle}
-      </p>
+    <main style="font-family: Tahoma;">
+      <Hero
+        title={project.title_fa}
+        subtitle={project.subtitle_fa}
+        stats={stats}
+      />
     </main>
   </body>
 </html>

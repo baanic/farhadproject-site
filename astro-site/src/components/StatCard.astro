@@ -1,0 +1,26 @@
+---
+// Props
+const { label, value } = Astro.props;
+---
+
+<div style="
+  background: #F5F0E6;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: right;
+">
+  <div style="
+    color: #4A5568;
+    font-size: 14px;
+    margin-bottom: 8px;
+  ">
+    {label}
+  </div>
+  <div style="
+    color: #1B2A4A;
+    font-size: 20px;
+    font-weight: bold;
+  ">
+    {value}
+  </div>
+</div>
