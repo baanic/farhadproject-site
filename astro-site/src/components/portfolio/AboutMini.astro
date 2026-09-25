@@ -1,0 +1,128 @@
+---
+const skills = [
+  "دفتر فنی و مستندسازی",
+  "کنترل پروژه و زمان‌بندی",
+  "متره، برآورد و صورت‌وضعیت",
+  "طراحی و اجرای آکوستیک",
+];
+---
+
+<section style="
+  background: #FFFFFF;
+  padding: 80px 24px;
+">
+  <div style="
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    align-items: center;
+  " class="about-mini-grid">
+    <!-- ستون تصویر -->
+    <div>
+      <div style="
+        background: #F5F0E6;
+        border-radius: 16px;
+        padding: 20px;
+      ">
+        <img
+          src="/images/portfolio/portrait.jpg"
+          alt="فرهاد رضائی"
+          style="
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+          "
+        />
+      </div>
+    </div>
+
+    <!-- ستون متن -->
+    <div>
+      <p style="
+        color: #B8763E;
+        font-size: 14px;
+        letter-spacing: 3px;
+        margin-bottom: 16px;
+      ">
+        درباره من
+      </p>
+
+      <h2 style="
+        color: #1B2A4A;
+        font-size: 32px;
+        margin-bottom: 24px;
+        line-height: 1.4;
+      ">
+        فرهاد رضائی
+      </h2>
+
+      <p style="
+        color: #4A5568;
+        font-size: 15px;
+        margin-bottom: 20px;
+      ">
+        مهندس عمران — دفتر فنی و کنترل پروژه
+      </p>
+
+      <p style="
+        color: #1C1C1C;
+        font-size: 16px;
+        line-height: 2;
+        margin-bottom: 32px;
+      ">
+        فرهاد رضائی هستم؛ ورودی ۱۳۸۸ مهندسی عمران دانشگاه آزاد اسلامی. این افتخار را داشته‌ام که در کنار بزرگان این رشته، فن و علم مهندسی عمران را در شاخه‌های فنی و اجرایی بیاموزم.
+      </p>
+
+      <!-- حوزه‌های تخصصی -->
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;">
+        {skills.map((skill) => (
+          <span style="
+            background: #1B2A4A;
+            color: #F5F0E6;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+          ">
+            {skill}
+          </span>
+        ))}
+      </div>
+
+      <!-- اطلاعات تماس -->
+      <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 14px;
+        color: #4A5568;
+        padding-top: 24px;
+        border-top: 1px solid #D9D4C8;
+      ">
+        <p style="margin: 0;">
+          <span style="color: #B8763E; margin-left: 8px;">ایمیل:</span>
+          farhadrezaei.eng@gmail.com
+        </p>
+        <p style="margin: 0;">
+          <span style="color: #B8763E; margin-left: 8px;">لینکدین:</span>
+          linkedin.com/in/farhadproject
+        </p>
+        <p style="margin: 0;">
+          <span style="color: #B8763E; margin-left: 8px;">وب‌سایت:</span>
+          farhadproject.ir
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .about-mini-grid {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+  }
+</style>

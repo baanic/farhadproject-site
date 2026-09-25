@@ -1,0 +1,89 @@
+---
+const { projectName, year } = Astro.props;
+---
+
+<section style="
+  background: linear-gradient(135deg, #1B2A4A 0%, #2D5C8A 100%);
+  color: #F5F0E6;
+  padding: 100px 24px 80px;
+  position: relative;
+  overflow: hidden;
+">
+  <!-- نوار مسی -->
+  <div style="
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background: #B8763E;
+  "></div>
+
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p style="
+      color: #B8763E;
+      font-size: 14px;
+      letter-spacing: 4px;
+      margin-bottom: 24px;
+    ">
+      PORTFOLIO — {year}
+    </p>
+
+    <h1 style="
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: #F5F0E6;
+    ">
+      پرتفولیو فنی
+    </h1>
+
+    <p style="
+      font-size: 24px;
+      color: #B8763E;
+      margin-bottom: 60px;
+      line-height: 1.6;
+    ">
+      دفترفنی | کنترل پروژه | متره و برآورد | آکوستیک
+    </p>
+
+    <div style="
+      padding-top: 32px;
+      border-top: 1px solid rgba(245, 240, 230, 0.2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: baseline;
+    ">
+      <p style="
+        font-size: 18px;
+        opacity: 0.9;
+        margin: 0;
+      ">
+        {projectName}
+      </p>
+      <p style="
+        font-size: 14px;
+        opacity: 0.6;
+        margin: 0;
+      ">
+        فرهاد رضائی — {year}
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    section {
+      padding: 60px 20px 40px !important;
+    }
+    h1 {
+      font-size: 36px !important;
+    }
+    p {
+      font-size: 16px !important;
+    }
+  }
+</style>
