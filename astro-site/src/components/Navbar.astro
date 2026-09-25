@@ -1,0 +1,63 @@
+---
+// منوی سایت
+const menuItems = [
+  { label: "خانه", href: "/" },
+  { label: "پروژه‌ها", href: "/portfolio" },
+  { label: "خدمات", href: "/services" },
+  { label: "درباره من", href: "/about" },
+  { label: "تماس", href: "/contact" },
+];
+
+// مسیر فعلی
+const currentPath = Astro.url.pathname;
+---
+
+<header style="
+  background: #1B2A4A;
+  padding: 16px 24px;
+  border-bottom: 3px solid #B8763E;
+">
+  <nav style="
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+  ">
+    <a href="/" style="
+      color: #F5F0E6;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    ">
+      فرهاد
+    </a>
+
+    <ul style="
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    ">
+      {menuItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            style={`
+              color: ${currentPath === item.href ? "#B8763E" : "#F5F0E6"};
+              text-decoration: none;
+              font-size: 15px;
+              padding: 8px 0;
+              border-bottom: 2px solid ${currentPath === item.href ? "#B8763E" : "transparent"};
+              transition: all 0.2s;
+            `}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
