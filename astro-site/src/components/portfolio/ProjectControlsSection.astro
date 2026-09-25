@@ -1,0 +1,293 @@
+---
+const wbsPhases = [
+  {
+    number: "۱",
+    title: "فاز ۱ - ابنیه",
+    color: "#2D5C8A",
+    items: ["سفت‌کاری", "نازک‌کاری"],
+  },
+  {
+    number: "۲",
+    title: "فاز ۲ - تأسیسات مکانیکی",
+    color: "#5A4A7A",
+    items: ["تهویه", "چیلر و فن‌کویل"],
+  },
+  {
+    number: "۳",
+    title: "فاز ۳ - تأسیسات الکتریکی",
+    color: "#D89B5A",
+    items: ["کابل‌کشی", "تابلو و روشنایی"],
+  },
+  {
+    number: "۴",
+    title: "فاز ۴ - تحویل",
+    color: "#8B6F47",
+    items: ["آکوستیک", "تست و تحویل"],
+  },
+];
+---
+
+<section style="
+  background: #FFFFFF;
+  padding: 80px 24px;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- عنوان -->
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    ">
+      <div style="
+        width: 8px;
+        height: 48px;
+        background: #B8763E;
+        border-radius: 4px;
+      "></div>
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 4px;
+        ">
+          PROJECT CONTROLS
+        </p>
+        <h2 style="
+          color: #1B2A4A;
+          font-size: 32px;
+          margin: 0;
+        ">
+          کنترل پروژه
+        </h2>
+      </div>
+    </div>
+
+    <!-- توضیح -->
+    <p style="
+      color: #1C1C1C;
+      font-size: 16px;
+      line-height: 2;
+      margin-bottom: 56px;
+      max-width: 850px;
+    ">
+      برنامه زمان‌بندی پروژه در قالب MPP تهیه شد و به‌صورت دوره‌ای بروزرسانی می‌شد. WBS پروژه در چهار فاز اصلی تعریف شد. ۸۸ فعالیت شاخص و ۱۲ نقطه عطف در برنامه زمان‌بندی تعریف شد. تهیه S-Curve برنامه‌ای، گزارش‌های ماهانه پیشرفت، تحلیل تأخیرات و ارائه راهکارهای جبرانی، از جمله فعالیت‌های من در این بخش بود.
+    </p>
+
+    <!-- WBS - چهار فاز -->
+    <h3 style="
+      color: #1B2A4A;
+      font-size: 22px;
+      margin-bottom: 24px;
+    ">
+      ساختار شکست کار (WBS)
+    </h3>
+
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 64px;
+    " class="wbs-grid">
+      {wbsPhases.map((phase) => (
+        <div style="
+          background: #F5F0E6;
+          border-radius: 12px;
+          overflow: hidden;
+        ">
+          <!-- سربرگ رنگی -->
+          <div style={`
+            background: ${phase.color};
+            color: #F5F0E6;
+            padding: 20px;
+          `}>
+            <div style="
+              font-size: 28px;
+              font-weight: 700;
+              line-height: 1;
+              opacity: 0.4;
+              margin-bottom: 8px;
+            ">
+              {phase.number}
+            </div>
+            <h4 style="
+              font-size: 15px;
+              margin: 0;
+              line-height: 1.5;
+            ">
+              {phase.title}
+            </h4>
+          </div>
+
+          <!-- زیرمجموعه‌ها -->
+          <div style="padding: 16px 20px;">
+            <ul style="
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            ">
+              {phase.items.map((item) => (
+                <li style="
+                  font-size: 13px;
+                  color: #1C1C1C;
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                ">
+                  <span style={`
+                    width: 6px;
+                    height: 6px;
+                    background: ${phase.color};
+                    border-radius: 50%;
+                    flex-shrink: 0;
+                  `}></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- S-Curve -->
+    <h3 style="
+      color: #1B2A4A;
+      font-size: 22px;
+      margin-bottom: 24px;
+    ">
+      نمودار S-Curve پیشرفت
+    </h3>
+
+    <div style="
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 32px;
+      align-items: center;
+    " class="scurve-grid">
+      <div style="
+        background: #F5F0E6;
+        border-radius: 12px;
+        padding: 24px;
+      ">
+        <img
+          src="/images/portfolio/project-scurve.png"
+          alt="نمودار S-Curve"
+          style="
+            width: 100%;
+            height: auto;
+            display: block;
+          "
+        />
+      </div>
+
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 12px;
+        ">
+          S-CURVE
+        </p>
+        <h4 style="
+          color: #1B2A4A;
+          font-size: 24px;
+          margin-bottom: 20px;
+          line-height: 1.4;
+        ">
+          نمودار پیشرفت برنامه‌ای و واقعی
+        </h4>
+        <p style="
+          color: #4A5568;
+          font-size: 15px;
+          line-height: 1.9;
+          margin-bottom: 20px;
+        ">
+          دوره ۱۸ ماهه پروژه از ماه ۱ تا ماه ۱۸. انحراف نهایی پیشرفت واقعی از برنامه‌ای، حدود ۵٪ بود.
+        </p>
+
+        <div style="
+          display: flex;
+          gap: 24px;
+          padding-top: 20px;
+          border-top: 1px solid #D9D4C8;
+        ">
+          <div>
+            <div style="
+              color: #1B2A4A;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 1;
+            ">
+              ۸۸
+            </div>
+            <div style="
+              color: #4A5568;
+              font-size: 12px;
+              margin-top: 4px;
+            ">
+              فعالیت شاخص
+            </div>
+          </div>
+          <div>
+            <div style="
+              color: #1B2A4A;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 1;
+            ">
+              ۱۲
+            </div>
+            <div style="
+              color: #4A5568;
+              font-size: 12px;
+              margin-top: 4px;
+            ">
+              نقطه عطف
+            </div>
+          </div>
+          <div>
+            <div style="
+              color: #1B2A4A;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 1;
+            ">
+              ۱۸
+            </div>
+            <div style="
+              color: #4A5568;
+              font-size: 12px;
+              margin-top: 4px;
+            ">
+              ماه مدت
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    .wbs-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .scurve-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .wbs-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
