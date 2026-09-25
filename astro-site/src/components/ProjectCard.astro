@@ -1,0 +1,48 @@
+---
+const { project } = Astro.props;
+---
+
+<a
+  href={`/portfolio/${project.slug}`}
+  style="
+    display: block;
+    background: #FFFFFF;
+    border: 1px solid #D9D4C8;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+  "
+>
+  <h3 style="
+    color: #1B2A4A;
+    font-size: 20px;
+    margin-bottom: 12px;
+  ">
+    {project.title_fa}
+  </h3>
+
+  <p style="
+    color: #4A5568;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  ">
+    {project.subtitle_fa}
+  </p>
+
+  <div style="
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #B8763E;
+  ">
+    <span>{project.area_m2.toLocaleString("fa-IR")} مترمربع</span>
+    <span>|</span>
+    <span>{project.total_duration_months} ماه</span>
+    <span>|</span>
+    <span>{project.status_fa}</span>
+  </div>
+</a>
