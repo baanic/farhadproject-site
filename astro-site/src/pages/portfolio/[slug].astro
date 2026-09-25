@@ -7,6 +7,8 @@ import AboutMini from "../../components/portfolio/AboutMini.astro";
 import ServicesMini from "../../components/portfolio/ServicesMini.astro";
 import ProjectHero from "../../components/portfolio/ProjectHero.astro";
 import Zoning from "../../components/portfolio/Zoning.astro";
+import RoleTimeline from "../../components/portfolio/RoleTimeline.astro";
+import TechnicalOfficeSection from "../../components/portfolio/TechnicalOfficeSection.astro";
 
 export async function getStaticPaths() {
   return masterData.projects.map((project) => ({
@@ -21,10 +23,7 @@ const { project } = Astro.props;
 <BaseLayout title={project.title_fa} description={project.subtitle_fa}>
   <Navbar />
 
-  <PortfolioIntro
-    projectName={project.title_fa}
-    year="۱۴۰۴"
-  />
+  <PortfolioIntro projectName={project.title_fa} year="۱۴۰۴" />
 
   <AboutMini />
 
@@ -33,4 +32,8 @@ const { project } = Astro.props;
   <ProjectHero project={project} />
 
   <Zoning />
+
+  <RoleTimeline />
+
+  <TechnicalOfficeSection />
 </BaseLayout>

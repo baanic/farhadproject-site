@@ -1,0 +1,228 @@
+---
+const features = [
+  {
+    number: "۰۱",
+    title: "ارائه مستندات به پرسنل و اجرا",
+    description: "تولید و توزیع نقشه‌ها، دستور کارها و مستندات فنی به تیم‌های اجرایی در تمام مراحل پروژه.",
+    color: "#5C7A5C",
+  },
+  {
+    number: "۰۲",
+    title: "گزارش‌های دوره‌ای و صورت‌جلسات",
+    description: "تهیه گزارش‌های هفتگی و ماهانه پیشرفت، برگزاری منظم صورت‌جلسات فنی و پیگیری مصوبات.",
+    color: "#2D5C8A",
+  },
+  {
+    number: "۰۳",
+    title: "آماده‌سازی زیرساخت فنی",
+    description: "هماهنگی سازه، تأسیسات و لایه‌بندی آکوستیک به‌عنوان پیش‌نیاز اجرای فضاهای حساس فنی.",
+    color: "#5A4A7A",
+  },
+];
+---
+
+<section style="
+  background: #F5F0E6;
+  padding: 80px 24px;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- عنوان -->
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    ">
+      <div style="
+        width: 8px;
+        height: 48px;
+        background: #B8763E;
+        border-radius: 4px;
+      "></div>
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 4px;
+        ">
+          TECHNICAL OFFICE
+        </p>
+        <h2 style="
+          color: #1B2A4A;
+          font-size: 32px;
+          margin: 0;
+        ">
+          دفتر فنی و مستندات
+        </h2>
+      </div>
+    </div>
+
+    <!-- متن توضیحی -->
+    <div style="
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 56px;
+    " class="office-grid">
+      <div>
+        <p style="
+          color: #1C1C1C;
+          font-size: 16px;
+          line-height: 2;
+          margin-bottom: 20px;
+        ">
+          در دفتر فنی پروژه، مدیریت مستندات فنی از جمله نقشه‌ها، RFIها، صورت‌جلسات، مکاتبات و گزارش‌ها را بر عهده داشتم. تولید نقشه‌های As-built بر اساس تغییرات اجرایی، به‌روزرسانی مستمر نقشه‌ها، و هماهنگی بین‌رشته‌ای (ابنیه، تأسیسات برقی، تأسیسات مکانیکی و آکوستیک) از جمله دستاوردهای این بخش بود.
+        </p>
+
+        <p style="
+          color: #1C1C1C;
+          font-size: 16px;
+          line-height: 2;
+          margin: 0;
+        ">
+          در طول پروژه، بیش از ۴۰ صورت‌جلسه فنی برگزار شد که تمامی آن‌ها با صورت‌جلسه مکتوب، مصوبات مشخص و پیگیری دوره‌ای همراه بود. مستندسازی دقیق، به‌ویژه در فضاهای حساس فنی، به کاهش اختلافات اجرایی و تسریع فرآیند تحویل کمک شایانی کرد.
+        </p>
+      </div>
+
+      <!-- آمار سریع -->
+      <div style="
+        background: #FFFFFF;
+        border-radius: 16px;
+        padding: 32px;
+        border-right: 4px solid #B8763E;
+      ">
+        <p style="
+          color: #B8763E;
+          font-size: 12px;
+          letter-spacing: 2px;
+          margin: 0 0 24px;
+        ">
+          آمار کلیدی
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <div style="
+              color: #1B2A4A;
+              font-size: 32px;
+              font-weight: 700;
+              line-height: 1;
+            ">
+              ۴۰+
+            </div>
+            <div style="
+              color: #4A5568;
+              font-size: 13px;
+              margin-top: 4px;
+            ">
+              صورت‌جلسه فنی
+            </div>
+          </div>
+
+          <div>
+            <div style="
+              color: #1B2A4A;
+              font-size: 32px;
+              font-weight: 700;
+              line-height: 1;
+            ">
+              ۱۰۰٪
+            </div>
+            <div style="
+              color: #4A5568;
+              font-size: 13px;
+              margin-top: 4px;
+            ">
+              مستندسازی تغییرات
+            </div>
+          </div>
+
+          <div>
+            <div style="
+              color: #1B2A4A;
+              font-size: 32px;
+              font-weight: 700;
+              line-height: 1;
+            ">
+              ۴
+            </div>
+            <div style="
+              color: #4A5568;
+              font-size: 13px;
+              margin-top: 4px;
+            ">
+              رشته هماهنگ‌شده
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- سه کارت ویژگی -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    " class="features-grid">
+      {features.map((feature) => (
+        <div style="
+          background: #FFFFFF;
+          border-radius: 12px;
+          padding: 28px;
+          border-top: 4px solid;
+        " class="feature-card">
+          <div style={`
+            color: ${feature.color};
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 16px;
+            opacity: 0.4;
+          `}>
+            {feature.number}
+          </div>
+
+          <h3 style="
+            color: #1B2A4A;
+            font-size: 17px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+          ">
+            {feature.title}
+          </h3>
+
+          <p style="
+            color: #4A5568;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+          ">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .feature-card {
+    border-top-color: transparent;
+  }
+
+  .feature-card:nth-child(1) { border-top-color: #5C7A5C; }
+  .feature-card:nth-child(2) { border-top-color: #2D5C8A; }
+  .feature-card:nth-child(3) { border-top-color: #5A4A7A; }
+
+  @media (max-width: 900px) {
+    .office-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

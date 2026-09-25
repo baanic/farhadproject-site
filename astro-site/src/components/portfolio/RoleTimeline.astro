@@ -1,0 +1,154 @@
+---
+const phases = [
+  {
+    number: "۱",
+    title: "تجهیز کارگاه",
+    description: "برنامه‌ریزی اولیه و آماده‌سازی",
+    color: "#8B6F47",
+  },
+  {
+    number: "۲",
+    title: "تهیه برنامه زمان‌بندی",
+    description: "WBS، MPP، S-Curve",
+    color: "#2D5C8A",
+  },
+  {
+    number: "۳",
+    title: "پیاده‌سازی و هماهنگی",
+    description: "اجرا، مستندسازی، کنترل",
+    color: "#5C7A5C",
+  },
+  {
+    number: "۴",
+    title: "صورت‌وضعیت و تحویل",
+    description: "متره، صورت‌جلسات، تحویل",
+    color: "#D89B5A",
+  },
+];
+---
+
+<section style="
+  background: #FFFFFF;
+  padding: 80px 24px;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- عنوان -->
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    ">
+      <div style="
+        width: 8px;
+        height: 48px;
+        background: #B8763E;
+        border-radius: 4px;
+      "></div>
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 4px;
+        ">
+          MY ROLE
+        </p>
+        <h2 style="
+          color: #1B2A4A;
+          font-size: 32px;
+          margin: 0;
+        ">
+          نقش من در پروژه
+        </h2>
+      </div>
+    </div>
+
+    <!-- توضیح -->
+    <p style="
+      color: #1C1C1C;
+      font-size: 16px;
+      line-height: 2;
+      margin-bottom: 64px;
+      max-width: 850px;
+    ">
+      در این پروژه، مسئولیت دفتر فنی، کنترل پروژه، متره و برآورد، و طراحی و اجرای آکوستیک را بر عهده داشتم. دامنه فعالیت‌های من از لحظه شروع پروژه آغاز شد و تا تحویل موقت و قطعی ادامه یافت.
+    </p>
+
+    <!-- تایم‌لاین -->
+    <div style="position: relative;" class="timeline-wrapper">
+      <!-- خط افقی -->
+      <div style="
+        position: absolute;
+        top: 40px;
+        right: 0;
+        left: 0;
+        height: 2px;
+        background: #D9D4C8;
+        z-index: 0;
+      " class="timeline-line"></div>
+
+      <!-- مراحل -->
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        position: relative;
+        z-index: 1;
+      " class="timeline-grid">
+        {phases.map((phase) => (
+          <div style="text-align: center;">
+            <!-- دایره شماره -->
+            <div style={`
+              width: 80px;
+              height: 80px;
+              border-radius: 50%;
+              background: #FFFFFF;
+              border: 4px solid ${phase.color};
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 24px;
+              font-size: 28px;
+              font-weight: 700;
+              color: ${phase.color};
+            `}>
+              {phase.number}
+            </div>
+
+            <h3 style="
+              color: #1B2A4A;
+              font-size: 17px;
+              margin-bottom: 8px;
+              line-height: 1.5;
+            ">
+              {phase.title}
+            </h3>
+
+            <p style="
+              color: #4A5568;
+              font-size: 13px;
+              line-height: 1.7;
+              margin: 0;
+            ">
+              {phase.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .timeline-line {
+      display: none !important;
+    }
+
+    .timeline-grid {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+  }
+</style>
