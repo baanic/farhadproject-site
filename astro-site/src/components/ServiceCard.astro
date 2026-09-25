@@ -1,0 +1,51 @@
+---
+const { icon, title, description, skills } = Astro.props;
+---
+
+<div style="
+  background: #FFFFFF;
+  border: 1px solid #D9D4C8;
+  border-radius: 12px;
+  padding: 28px;
+  transition: all 0.3s;
+">
+  <div style="
+    font-size: 32px;
+    margin-bottom: 16px;
+  ">
+    {icon}
+  </div>
+
+  <h3 style="
+    color: #1B2A4A;
+    font-size: 20px;
+    margin-bottom: 12px;
+  ">
+    {title}
+  </h3>
+
+  <p style="
+    color: #4A5568;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  ">
+    {description}
+  </p>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 2;
+    color: #1C1C1C;
+  ">
+    {skills.map((skill) => (
+      <li style="display: flex; gap: 8px; align-items: flex-start;">
+        <span style="color: #B8763E;">▪</span>
+        <span>{skill}</span>
+      </li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+
+const services = [
+  {
+    icon: "📐",
+    title: "دفتر فنی و مستندسازی",
+    description: "مدیریت مستندات پروژه، شامل نقشه‌ها، RFIها، صورت‌جلسات و مکاتبات. تولید نقشه‌های As-built و هماهنگی بین‌رشته‌ای.",
+    skills: [
+      "تولید نقشه As-built",
+      "هماهنگی بین‌رشته‌ای",
+      "پیگیری RFI",
+      "گزارش‌های فنی دوره‌ای",
+    ],
+  },
+  {
+    icon: "📊",
+    title: "کنترل پروژه",
+    description: "تهیه WBS سلسله‌مراتبی، تدوین برنامه زمان‌بندی MPP، بروزرسانی دوره‌ای و تحلیل تأخیرات.",
+    skills: [
+      "برنامه زمان‌بندی MPP",
+      "S-Curve و تحلیل پیشرفت",
+      "گزارش‌های ماهانه",
+      "تحلیل مسیر بحرانی",
+    ],
+  },
+  {
+    icon: "📏",
+    title: "متره، برآورد و صورت‌وضعیت",
+    description: "متره تفصیلی و ریزمتره بر اساس فهرست‌بهای واحد پایه، تهیه صورت‌وضعیت‌های دوره‌ای و کنترل احجام.",
+    skills: [
+      "متره و ریزمتره",
+      "برآورد احجام و هزینه",
+      "صورت‌وضعیت دوره‌ای",
+      "کنترل تغییرات",
+    ],
+  },
+  {
+    icon: "🎧",
+    title: "طراحی و اجرای آکوستیک",
+    description: "طراحی لایه‌بندی آکوستیک استودیو، اتاق کنترل، اتاق ادیت و بازشنوایی. طراحی درب آکوستیک، پنجره ویزور و ایرلاک صوتی.",
+    skills: [
+      "لایه‌بندی دیوار و سقف",
+      "درب و پنجره آکوستیک",
+      "ایرلاک صوتی (Airlock)",
+      "سیستم تهویه بی‌صدا",
+    ],
+  },
+];
+---
+
+<BaseLayout title="خدمات">
+  <Navbar />
+
+  <main style="max-width: 1100px; margin: 0 auto; padding: 60px 24px;">
+    <h1 style="
+      color: #1B2A4A;
+      font-size: 42px;
+      margin-bottom: 12px;
+    ">
+      خدمات تخصصی
+    </h1>
+    <p style="
+      color: #4A5568;
+      font-size: 18px;
+      margin-bottom: 48px;
+    ">
+      خدمات من در چهار حوزه تخصصی که مکمل یکدیگر هستند
+    </p>
+
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    ">
+      {services.map((service) => (
+        <ServiceCard
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+          skills={service.skills}
+        />
+      ))}
+    </div>
+  </main>
+</BaseLayout>

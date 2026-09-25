@@ -1,0 +1,98 @@
+---
+const currentYear = new Date().getFullYear();
+const persianYear = currentYear - 621; // تقریب
+---
+
+<footer style="
+  background: #1B2A4A;
+  color: #F5F0E6;
+  padding: 60px 24px 24px;
+  margin-top: 80px;
+  border-top: 3px solid #B8763E;
+">
+  <div style="
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  ">
+    <!-- ستون ۱: معرفی -->
+    <div>
+      <h3 style="
+        font-size: 18px;
+        margin-bottom: 16px;
+        color: #B8763E;
+      ">
+        فرهاد
+      </h3>
+      <p style="
+        font-size: 14px;
+        line-height: 1.9;
+        opacity: 0.85;
+      ">
+        پرتفولیو تخصصی در حوزه دفتر فنی، کنترل پروژه، متره و برآورد و طراحی و اجرای آکوستیک.
+      </p>
+    </div>
+
+    <!-- ستون ۲: لینک‌های سریع -->
+    <div>
+      <h3 style="
+        font-size: 18px;
+        margin-bottom: 16px;
+        color: #B8763E;
+      ">
+        لینک‌های سریع
+      </h3>
+      <ul style="
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        line-height: 2.2;
+      ">
+        <li><a href="/" style="color: inherit; opacity: 0.85;">خانه</a></li>
+        <li><a href="/portfolio" style="color: inherit; opacity: 0.85;">پروژه‌ها</a></li>
+        <li><a href="/services" style="color: inherit; opacity: 0.85;">خدمات</a></li>
+        <li><a href="/about" style="color: inherit; opacity: 0.85;">درباره من</a></li>
+        <li><a href="/contact" style="color: inherit; opacity: 0.85;">تماس</a></li>
+      </ul>
+    </div>
+
+    <!-- ستون ۳: تماس -->
+    <div>
+      <h3 style="
+        font-size: 18px;
+        margin-bottom: 16px;
+        color: #B8763E;
+      ">
+        تماس با من
+      </h3>
+      <ul style="
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        line-height: 2.2;
+        opacity: 0.85;
+      ">
+        <li>ایمیل: farhadrezaei.eng@gmail.com</li>
+        <li>لینکدین: linkedin.com/in/farhadproject</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- خط پایین -->
+  <div style="
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(245, 240, 230, 0.15);
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.7;
+  ">
+    © {persianYear} — تمامی حقوق محفوظ است
+  </div>
+</footer>

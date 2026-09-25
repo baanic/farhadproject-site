@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+
+const tags = [
+  "دفتر فنی و مستندسازی",
+  "کنترل پروژه و زمان‌بندی",
+  "متره، برآورد و صورت‌وضعیت",
+  "طراحی و اجرای آکوستیک",
+];
+---
+
+<BaseLayout title="درباره من">
+  <Navbar />
+
+  <main style="max-width: 900px; margin: 0 auto; padding: 60px 24px;">
+    <h1 style="
+      color: #1B2A4A;
+      font-size: 42px;
+      margin-bottom: 12px;
+    ">
+      درباره من
+    </h1>
+    <p style="
+      color: #B8763E;
+      font-size: 18px;
+      margin-bottom: 48px;
+    ">
+      مهندس عمران | دفتر فنی | کنترل پروژه | متره | آکوستیک
+    </p>
+
+    <div style="
+      color: #1C1C1C;
+      font-size: 17px;
+      line-height: 2;
+    ">
+      <p style="margin-bottom: 24px;">
+        من یک مهندس عمران با تخصص در دفتر فنی، کنترل پروژه، متره و برآورد و طراحی و اجرای آکوستیک هستم. با تجربه اجرایی در پروژه‌های فنی و رسانه‌ای، در تمام مراحل پروژه — از مستندسازی و برنامه‌ریزی تا اجرا و تحویل — حضور داشته‌ام.
+      </p>
+
+      <p style="margin-bottom: 24px;">
+        تمرکز من بر دقت، مستندسازی و هماهنگی بین‌رشته‌ای است. باور دارم که پروژه موفق، پروژه‌ای است که در آن هر عدد، هر تصمیم و هر تغییر، مستند و قابل پیگیری باشد.
+      </p>
+    </div>
+
+    <h2 style="
+      color: #1B2A4A;
+      font-size: 24px;
+      margin-top: 48px;
+      margin-bottom: 24px;
+    ">
+      حوزه‌های تخصصی
+    </h2>
+
+    <div style="
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    ">
+      {tags.map((tag) => (
+        <span style="
+          background: #F5F0E6;
+          color: #1B2A4A;
+          padding: 10px 18px;
+          border-radius: 24px;
+          font-size: 14px;
+          font-weight: 500;
+        ">
+          {tag}
+        </span>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
