@@ -13,6 +13,10 @@ import ProjectControlsSection from "../../components/portfolio/ProjectControlsSe
 import QSSection from "../../components/portfolio/QSSection.astro";
 import AcousticDesignSection from "../../components/portfolio/AcousticDesignSection.astro";
 import AcousticExecutionSection from "../../components/portfolio/AcousticExecutionSection.astro";
+import ResultsSection from "../../components/portfolio/ResultsSection.astro";
+import DeliveriesSection from "../../components/portfolio/DeliveriesSection.astro";
+import LessonsSection from "../../components/portfolio/LessonsSection.astro";
+import ContactSection from "../../components/portfolio/ContactSection.astro";
 
 export async function getStaticPaths() {
   return masterData.projects.map((project) => ({
@@ -48,4 +52,12 @@ const { project } = Astro.props;
   <AcousticDesignSection />
 
   <AcousticExecutionSection />
+
+  <ResultsSection />
+
+  <DeliveriesSection />
+
+  <LessonsSection />
+
+  <ContactSection />
 </BaseLayout>

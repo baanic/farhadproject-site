@@ -1,0 +1,148 @@
+---
+const lessons = [
+  {
+    number: "۰۱",
+    title: "مستندسازی دقیق، بیمه پروژه است",
+    description: "در فضاهایی که چندین رشته فنی به‌طور هم‌زمان کار می‌کنند، هر تغییری باید در همان لحظه مستند شود. در غیر این صورت، اختلافات اجرایی به سرعت انباشته می‌شوند.",
+    color: "#5C7A5C",
+  },
+  {
+    number: "۰۲",
+    title: "هماهنگی بین‌رشته‌ای، کلید موفقیت است",
+    description: "آکوستیک، برق، مکانیک و ابنیه باید در تمام مراحل با یکدیگر هماهنگ باشند. یک تغییر کوچک در کانال هوا، می‌تواند کل لایه‌بندی آکوستیک را تحت تأثیر قرار دهد.",
+    color: "#2D5C8A",
+  },
+  {
+    number: "۰۳",
+    title: "برنامه‌ریزی منعطف، راه عبور از تأخیرات",
+    description: "در پروژه‌های بزرگ، تأخیرات اجتناب‌ناپذیرند. تفاوت در نحوه مواجهه با آن‌هاست. تحلیل سریع، ارائه راهکار جبرانی و پیگیری مستمر، از جمله مهارت‌هایی است که در این پروژه تقویت شد.",
+    color: "#D89B5A",
+  },
+];
+---
+
+<section style="
+  background: #FFFFFF;
+  padding: 80px 24px;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- عنوان -->
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    ">
+      <div style="
+        width: 8px;
+        height: 48px;
+        background: #B8763E;
+        border-radius: 4px;
+      "></div>
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 4px;
+        ">
+          LESSONS LEARNED
+        </p>
+        <h2 style="
+          color: #1B2A4A;
+          font-size: 32px;
+          margin: 0;
+        ">
+          درس‌آموخته‌ها
+        </h2>
+      </div>
+    </div>
+
+    <p style="
+      color: #1C1C1C;
+      font-size: 16px;
+      line-height: 2;
+      margin-bottom: 56px;
+      max-width: 850px;
+    ">
+      پروژه‌های فنی با فضاهای حساس، همیشه چالش‌های منحصربه‌فردی دارند. در این پروژه، سه درس کلیدی به دست آمد.
+    </p>
+
+    <!-- تصویر + درس‌ها -->
+    <div style="
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 48px;
+      align-items: center;
+    " class="lessons-grid">
+      <!-- تصویر -->
+      <div style="
+        border-radius: 16px;
+        overflow: hidden;
+        background: #F5F0E6;
+      ">
+        <img
+          src="/images/portfolio/lessons.jpg"
+          alt="درس‌آموخته‌ها"
+          style="
+            width: 100%;
+            height: auto;
+            display: block;
+          "
+        />
+      </div>
+
+      <!-- درس‌ها -->
+      <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      ">
+        {lessons.map((lesson) => (
+          <div style={`
+            background: #F5F0E6;
+            border-radius: 12px;
+            padding: 24px;
+            border-right: 4px solid ${lesson.color};
+          `}>
+            <div style={`
+              color: ${lesson.color};
+              font-size: 28px;
+              font-weight: 700;
+              line-height: 1;
+              margin-bottom: 12px;
+              opacity: 0.6;
+            `}>
+              {lesson.number}
+            </div>
+            <h3 style="
+              color: #1B2A4A;
+              font-size: 17px;
+              margin-bottom: 10px;
+              line-height: 1.5;
+            ">
+              {lesson.title}
+            </h3>
+            <p style="
+              color: #4A5568;
+              font-size: 14px;
+              line-height: 1.8;
+              margin: 0;
+            ">
+              {lesson.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    .lessons-grid {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+  }
+</style>

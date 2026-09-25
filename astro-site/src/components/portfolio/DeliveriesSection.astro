@@ -1,0 +1,263 @@
+---
+const deliveries = [
+  {
+    block: "بلوک B2",
+    subtitle: "بال شمالی — همکف و طبقه اول",
+    color: "#2D5C8A",
+    summary: "۴۰ اتاق اداری + راهروها + سرویس‌ها",
+    items: [
+      { name: "اتاق‌های اداری فنی", value: "۱۶ اتاق" },
+      { name: "اتاق‌های اداری طبقه اول", value: "۲۲ اتاق" },
+      { name: "راهروهای شمالی و جنوبی", value: "۴ راهرو" },
+      { name: "سرویس‌های بهداشتی", value: "۴ فضا" },
+    ],
+    disciplines: [
+      "ابنیه (سفت‌کاری و نازک‌کاری کامل)",
+      "تأسیسات برقی",
+      "تأسیسات مکانیکی",
+      "اعلام حریق",
+    ],
+  },
+  {
+    block: "بلوک A",
+    subtitle: "بخش فنی — همکف",
+    color: "#8B6F47",
+    summary: "۴ استودیو رادیویی + ۱ استودیو تلویزیونی",
+    items: [
+      { name: "استودیوهای رادیویی", value: "۴ استودیو (A، B، C، D)" },
+      { name: "استودیو تلویزیونی", value: "۱ استودیو (B)" },
+      { name: "اتاق‌های ادیت و تدوین", value: "۵ اتاق" },
+      { name: "اتاق‌های کنترل", value: "۵ اتاق" },
+    ],
+    disciplines: [
+      "ابنیه (شامل لایه‌بندی آکوستیک کامل)",
+      "تأسیسات برقی (سیستم صوت و مانیتورینگ)",
+      "تأسیسات مکانیکی (سایلنسر کانال هوا)",
+      "طراحی و اجرای آکوستیک",
+    ],
+  },
+  {
+    block: "بلوک A",
+    subtitle: "بخش شرقی — طبقه اول",
+    color: "#5C7A5C",
+    summary: "۹ اتاق + ۲ تونل تأسیسات",
+    items: [
+      { name: "اتاق مدیر آرشیو", value: "۱ اتاق" },
+      { name: "آرشیو ویژه، تصویری، صوتی", value: "۴ فضا" },
+      { name: "اتاق‌های تأسیسات", value: "۳ اتاق" },
+      { name: "تونل‌های تأسیسات", value: "۲ تونل" },
+    ],
+    disciplines: [
+      "ابنیه (نازک‌کاری کامل)",
+      "تأسیسات برقی",
+      "تأسیسات مکانیکی",
+    ],
+  },
+  {
+    block: "بلوک B3",
+    subtitle: "تحریریه خبر",
+    color: "#5A4A7A",
+    summary: "۱۰ فضا + محوطه جانبی",
+    items: [
+      { name: "تحریریه خبر", value: "۱ فضا" },
+      { name: "اتاق‌های گریم", value: "۳ فضا" },
+      { name: "کافه کتاب", value: "۱ فضا" },
+      { name: "سرویس‌های عمومی", value: "۲ فضا" },
+    ],
+    disciplines: [
+      "ابنیه (شامل سنگ رمپ ورودی)",
+      "تأسیسات برقی",
+      "تأسیسات مکانیکی",
+    ],
+  },
+];
+---
+
+<section style="
+  background: #F5F0E6;
+  padding: 80px 24px;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- عنوان -->
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    ">
+      <div style="
+        width: 8px;
+        height: 48px;
+        background: #B8763E;
+        border-radius: 4px;
+      "></div>
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 4px;
+        ">
+          DELIVERIES
+        </p>
+        <h2 style="
+          color: #1B2A4A;
+          font-size: 32px;
+          margin: 0;
+        ">
+          لیست تحویل‌ها
+        </h2>
+      </div>
+    </div>
+
+    <!-- کارت‌های تحویل -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    " class="deliveries-grid">
+      {deliveries.map((delivery) => (
+        <div style="
+          background: #FFFFFF;
+          border-radius: 16px;
+          overflow: hidden;
+        ">
+          <!-- سربرگ رنگی -->
+          <div style={`
+            background: ${delivery.color};
+            color: #F5F0E6;
+            padding: 28px;
+          `}>
+            <div style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 12px;
+            ">
+              <h3 style="
+                font-size: 24px;
+                margin: 0;
+                line-height: 1.2;
+              ">
+                {delivery.block}
+              </h3>
+              <span style="
+                background: rgba(245, 240, 230, 0.2);
+                padding: 4px 12px;
+                border-radius: 12px;
+                font-size: 11px;
+              ">
+                تحویل‌شده
+              </span>
+            </div>
+            <p style="
+              font-size: 14px;
+              margin: 0;
+              opacity: 0.9;
+            ">
+              {delivery.subtitle}
+            </p>
+          </div>
+
+          <!-- محتوا -->
+          <div style="padding: 24px 28px;">
+            <!-- فهرست اقلام -->
+            <div style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              padding-bottom: 20px;
+              margin-bottom: 20px;
+              border-bottom: 1px solid #D9D4C8;
+            ">
+              {delivery.items.map((item) => (
+                <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  font-size: 14px;
+                ">
+                  <span style="color: #1C1C1C;">{item.name}</span>
+                  <span style={`
+                    color: ${delivery.color};
+                    font-weight: 500;
+                    font-size: 13px;
+                  `}>
+                    {item.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <!-- جمع‌بندی -->
+            <div style="
+              background: #F5F0E6;
+              padding: 12px 16px;
+              border-radius: 8px;
+              margin-bottom: 20px;
+            ">
+              <div style="
+                color: #B8763E;
+                font-size: 11px;
+                letter-spacing: 2px;
+                margin-bottom: 4px;
+              ">
+                جمع‌بندی
+              </div>
+              <div style="
+                color: #1B2A4A;
+                font-size: 14px;
+                font-weight: 500;
+              ">
+                {delivery.summary}
+              </div>
+            </div>
+
+            <!-- رشته‌های تحویل‌شده -->
+            <div>
+              <div style="
+                color: #B8763E;
+                font-size: 11px;
+                letter-spacing: 2px;
+                margin-bottom: 12px;
+              ">
+                رشته‌های تحویل‌شده
+              </div>
+              <div style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+              ">
+                {delivery.disciplines.map((disc) => (
+                  <div style="
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 8px;
+                    font-size: 13px;
+                    color: #4A5568;
+                    line-height: 1.6;
+                  ">
+                    <span style={`
+                      color: ${delivery.color};
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    `}>▪</span>
+                    <span>{disc}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .deliveries-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

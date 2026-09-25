@@ -1,0 +1,147 @@
+---
+const contacts = [
+  { label: "ایمیل", value: "farhadrezaei.eng@gmail.com", href: "mailto:farhadrezaei.eng@gmail.com" },
+  { label: "لینکدین", value: "linkedin.com/in/farhadproject", href: "https://linkedin.com/in/farhadproject" },
+  { label: "وب‌سایت", value: "farhadproject.ir", href: "https://farhadproject.ir" },
+  { label: "تلفن", value: "۰۹۱۲۰۵۸۶۸۸۱", href: "tel:+989120586881" },
+];
+---
+
+<section style="
+  background: linear-gradient(135deg, #1B2A4A 0%, #2D5C8A 100%);
+  color: #F5F0E6;
+  padding: 100px 24px 80px;
+  position: relative;
+  overflow: hidden;
+">
+  <!-- نوار مسی -->
+  <div style="
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background: #B8763E;
+  "></div>
+
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 64px;
+      align-items: center;
+    " class="contact-grid">
+      <!-- بخش متن -->
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 4px;
+          margin: 0 0 16px;
+        ">
+          CONTACT
+        </p>
+
+        <h2 style="
+          font-size: 44px;
+          margin-bottom: 24px;
+          line-height: 1.3;
+          color: #F5F0E6;
+        ">
+          آماده همکاری در پروژه‌های شما
+        </h2>
+
+        <p style="
+          font-size: 17px;
+          line-height: 1.9;
+          opacity: 0.9;
+          margin-bottom: 40px;
+          max-width: 500px;
+        ">
+          اگر به دنبال یک متخصص دفتر فنی، کنترل پروژه، متره و برآورد یا آکوستیک برای پروژه خود هستید، با من تماس بگیرید.
+        </p>
+
+        <!-- اطلاعات تماس -->
+        <div style="
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        " class="contacts-list">
+          {contacts.map((contact) => (
+            <a
+              href={contact.href}
+              style="
+                display: block;
+                background: rgba(245, 240, 230, 0.08);
+                border: 1px solid rgba(245, 240, 230, 0.15);
+                padding: 16px 20px;
+                border-radius: 10px;
+                color: #F5F0E6;
+                text-decoration: none;
+              "
+            >
+              <div style="
+                color: #B8763E;
+                font-size: 11px;
+                letter-spacing: 2px;
+                margin-bottom: 6px;
+              ">
+                {contact.label}
+              </div>
+              <div style="
+                font-size: 14px;
+                word-break: break-all;
+              ">
+                {contact.value}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- QR Code -->
+      <div style="
+        text-align: center;
+      ">
+        <div style="
+          background: #FFFFFF;
+          padding: 20px;
+          border-radius: 16px;
+          display: inline-block;
+        ">
+          <img
+            src="/images/portfolio/qr-code.png"
+            alt="QR Code"
+            style="
+              width: 200px;
+              height: 200px;
+              display: block;
+            "
+          />
+        </div>
+        <p style="
+          font-size: 13px;
+          opacity: 0.7;
+          margin-top: 16px;
+          line-height: 1.7;
+        ">
+          با اسکن QR Code،<br />
+          به وب‌سایت شخصی من دسترسی داشته باشید
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+
+    .contacts-list {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
