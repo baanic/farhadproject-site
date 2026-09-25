@@ -1,5 +1,4 @@
 ---
-// منوی سایت
 const menuItems = [
   { label: "خانه", href: "/" },
   { label: "پروژه‌ها", href: "/portfolio" },
@@ -8,7 +7,6 @@ const menuItems = [
   { label: "تماس", href: "/contact" },
 ];
 
-// مسیر فعلی
 const currentPath = Astro.url.pathname;
 ---
 
@@ -23,13 +21,11 @@ const currentPath = Astro.url.pathname;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    direction: rtl;
   ">
     <a href="/" style="
       color: #F5F0E6;
       font-size: 20px;
-      font-weight: bold;
-      text-decoration: none;
+      font-weight: 700;
     ">
       فرهاد
     </a>
@@ -47,7 +43,6 @@ const currentPath = Astro.url.pathname;
             href={item.href}
             style={`
               color: ${currentPath === item.href ? "#B8763E" : "#F5F0E6"};
-              text-decoration: none;
               font-size: 15px;
               padding: 8px 0;
               border-bottom: 2px solid ${currentPath === item.href ? "#B8763E" : "transparent"};

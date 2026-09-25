@@ -1,5 +1,6 @@
 ---
-// Props: عنوان صفحه
+import "../styles/global.css";
+
 const { title, description } = Astro.props;
 ---
 
@@ -11,7 +12,7 @@ const { title, description } = Astro.props;
     <meta name="description" content={description || "پرتفولیو مهندسی فرهاد"} />
     <title>{title ? `${title} | پرتفولیو فرهاد` : "پرتفولیو فرهاد"}</title>
   </head>
-  <body style="font-family: Tahoma, sans-serif; margin: 0; padding: 0; background: #FFFFFF;">
+  <body>
     <slot />
   </body>
 </html>
