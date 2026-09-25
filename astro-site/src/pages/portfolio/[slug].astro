@@ -11,6 +11,8 @@ import RoleTimeline from "../../components/portfolio/RoleTimeline.astro";
 import TechnicalOfficeSection from "../../components/portfolio/TechnicalOfficeSection.astro";
 import ProjectControlsSection from "../../components/portfolio/ProjectControlsSection.astro";
 import QSSection from "../../components/portfolio/QSSection.astro";
+import AcousticDesignSection from "../../components/portfolio/AcousticDesignSection.astro";
+import AcousticExecutionSection from "../../components/portfolio/AcousticExecutionSection.astro";
 
 export async function getStaticPaths() {
   return masterData.projects.map((project) => ({
@@ -42,4 +44,8 @@ const { project } = Astro.props;
   <ProjectControlsSection />
 
   <QSSection />
+
+  <AcousticDesignSection />
+
+  <AcousticExecutionSection />
 </BaseLayout>

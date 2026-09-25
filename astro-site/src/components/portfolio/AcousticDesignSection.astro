@@ -1,0 +1,428 @@
+---
+const wallLayers = [
+  { order: "۰", name: "هبلکس دوجداره", spec: "۲۰ سانت + پشم سنگ ۱۰ سانت + ۲۰ سانت" },
+  { order: "۱", name: "استخوان‌بندی فولادی", spec: "پروفیل ۳۰×۳۰ با شبکه ۱۲۵×۶۳" },
+  { order: "۲", name: "ایزولاسیون صوتی", spec: "پشم سنگ دانسیته ۸۰، ضخامت ۱۰ سانتی‌متر" },
+  { order: "۳", name: "زیرسازی چوبی", spec: "چوب روسی ۲۲ میلی‌متر، فاصله ۶۰ سانتی‌متر" },
+  { order: "۴", name: "فینیشینگ نهایی", spec: "MDF ازاره T107 + پارچه نساج پایا" },
+];
+
+const ceilingLayers = [
+  { order: "۰", name: "شاسی‌کشی فولادی", spec: "پروفیل فولادی ۳۰×۳۰" },
+  { order: "۱", name: "زیرسازی چوبی", spec: "چوب روسی ۳۰ میلی‌متر، فاصله ۶۰ سانتی‌متر" },
+  { order: "۲", name: "MDF پانچ‌شده", spec: "ضخامت ۸ میلی‌متر" },
+  { order: "۳", name: "وول‌پنل نورس‌پنل", spec: "کد NP03، شبکه ۶۰×۱۲۰" },
+];
+
+const doorDetails = [
+  { label: "لنگه درب", value: "ضخامت ۸ سانتی‌متر با روکش چرمی" },
+  { label: "نوار درزگیر", value: "نوار درزگیر فشاری در چهارچوب" },
+  { label: "پاشنه فنی", value: "Threshold در کف" },
+  { label: "دستگیره", value: "پانیک بار (Panic Bar)" },
+];
+
+const visorDetails = [
+  { label: "شیشه", value: "زاویه‌دار با گاز آرگون" },
+  { label: "قاب", value: "MDF گردویی کد T107" },
+  { label: "تراز", value: "هم‌تراز با بالای ازاره در ارتفاع ۱۲۰ سانتی‌متر" },
+];
+
+const hvacDetails = [
+  { label: "روش", value: "نصب سایلنسر در مسیر کانال‌های هوا" },
+  { label: "هدف", value: "جلوگیری از انتقال صدای فن به داخل استودیو" },
+];
+---
+
+<section style="
+  background: #FFFFFF;
+  padding: 80px 24px;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <!-- عنوان -->
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    ">
+      <div style="
+        width: 8px;
+        height: 48px;
+        background: #B8763E;
+        border-radius: 4px;
+      "></div>
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 4px;
+        ">
+          ACOUSTIC DESIGN
+        </p>
+        <h2 style="
+          color: #1B2A4A;
+          font-size: 32px;
+          margin: 0;
+        ">
+          طراحی آکوستیک
+        </h2>
+      </div>
+    </div>
+
+    <p style="
+      color: #1C1C1C;
+      font-size: 16px;
+      line-height: 2;
+      margin-bottom: 56px;
+      max-width: 850px;
+    ">
+      طراحی آکوستیک استودیوها، حساس‌ترین بخش فنی این پروژه بود. برای رسیدن به ایزولاسیون صوتی حرفه‌ای، لایه‌بندی دقیقی برای دیوارها و سقف طراحی شد. هر لایه، نقش مشخصی در ایزولاسیون یا جذب صدا دارد.
+    </p>
+
+    <!-- مقطع دیوار -->
+    <div style="
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 80px;
+    " class="acoustic-grid">
+      <!-- دیاگرام -->
+      <div style="
+        background: #F5F0E6;
+        border-radius: 16px;
+        padding: 24px;
+      ">
+        <img
+          src="/images/portfolio/acoustic-wall.svg"
+          alt="مقطع دیوار آکوستیک"
+          style="
+            width: 100%;
+            height: auto;
+            display: block;
+          "
+        />
+      </div>
+
+      <!-- توضیحات -->
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 12px;
+        ">
+          WALL SECTION
+        </p>
+        <h3 style="
+          color: #1B2A4A;
+          font-size: 26px;
+          margin-bottom: 24px;
+          line-height: 1.4;
+        ">
+          مقطع دیوار استودیو
+        </h3>
+        <p style="
+          color: #4A5568;
+          font-size: 15px;
+          line-height: 1.9;
+          margin-bottom: 28px;
+        ">
+          لایه‌بندی دیوار استودیوها از سازه تا فینیشینگ، شامل پنج لایه اصلی:
+        </p>
+
+        <!-- لیست لایه‌ها -->
+        <div style="
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        ">
+          {wallLayers.map((layer) => (
+            <div style="
+              display: flex;
+              gap: 16px;
+              padding: 12px 16px;
+              background: #F5F0E6;
+              border-radius: 8px;
+              border-right: 3px solid #B8763E;
+            ">
+              <div style="
+                color: #B8763E;
+                font-size: 18px;
+                font-weight: 700;
+                flex-shrink: 0;
+                width: 30px;
+              ">
+                {layer.order}
+              </div>
+              <div>
+                <div style="
+                  color: #1B2A4A;
+                  font-size: 14px;
+                  font-weight: 500;
+                  margin-bottom: 4px;
+                ">
+                  {layer.name}
+                </div>
+                <div style="
+                  color: #4A5568;
+                  font-size: 12px;
+                  line-height: 1.6;
+                ">
+                  {layer.spec}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- مقطع سقف -->
+    <div style="
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 80px;
+    " class="acoustic-grid">
+      <!-- توضیحات -->
+      <div>
+        <p style="
+          color: #B8763E;
+          font-size: 13px;
+          letter-spacing: 3px;
+          margin: 0 0 12px;
+        ">
+          CEILING SECTION
+        </p>
+        <h3 style="
+          color: #1B2A4A;
+          font-size: 26px;
+          margin-bottom: 24px;
+          line-height: 1.4;
+        ">
+          مقطع سقف آکوستیک
+        </h3>
+        <p style="
+          color: #4A5568;
+          font-size: 15px;
+          line-height: 1.9;
+          margin-bottom: 28px;
+        ">
+          لایه‌بندی سقف آکوستیک، ترکیبی از شاسی‌کشی، زیرسازی و لایه‌های جذب صدا:
+        </p>
+
+        <div style="
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        ">
+          {ceilingLayers.map((layer) => (
+            <div style="
+              display: flex;
+              gap: 16px;
+              padding: 12px 16px;
+              background: #F5F0E6;
+              border-radius: 8px;
+              border-right: 3px solid #5A4A7A;
+            ">
+              <div style="
+                color: #5A4A7A;
+                font-size: 18px;
+                font-weight: 700;
+                flex-shrink: 0;
+                width: 30px;
+              ">
+                {layer.order}
+              </div>
+              <div>
+                <div style="
+                  color: #1B2A4A;
+                  font-size: 14px;
+                  font-weight: 500;
+                  margin-bottom: 4px;
+                ">
+                  {layer.name}
+                </div>
+                <div style="
+                  color: #4A5568;
+                  font-size: 12px;
+                  line-height: 1.6;
+                ">
+                  {layer.spec}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- دیاگرام -->
+      <div style="
+        background: #F5F0E6;
+        border-radius: 16px;
+        padding: 24px;
+      ">
+        <img
+          src="/images/portfolio/acoustic-ceiling.svg"
+          alt="مقطع سقف آکوستیک"
+          style="
+            width: 100%;
+            height: auto;
+            display: block;
+          "
+        />
+      </div>
+    </div>
+
+    <!-- سه کارت جزئیات: درب، ویزور، تهویه -->
+    <h3 style="
+      color: #1B2A4A;
+      font-size: 22px;
+      margin-bottom: 24px;
+    ">
+      جزئیات اجرایی
+    </h3>
+
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    " class="details-grid">
+      <!-- درب آکوستیک -->
+      <div style="
+        background: #F5F0E6;
+        border-radius: 12px;
+        padding: 24px;
+        border-top: 4px solid #8B6F47;
+      ">
+        <h4 style="
+          color: #1B2A4A;
+          font-size: 17px;
+          margin-bottom: 16px;
+        ">
+          درب آکوستیک
+        </h4>
+        <div style="
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        ">
+          {doorDetails.map((detail) => (
+            <div>
+              <div style="
+                color: #B8763E;
+                font-size: 12px;
+                margin-bottom: 2px;
+              ">
+                {detail.label}
+              </div>
+              <div style="
+                color: #1C1C1C;
+                font-size: 13px;
+                line-height: 1.7;
+              ">
+                {detail.value}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- پنجره ویزور -->
+      <div style="
+        background: #F5F0E6;
+        border-radius: 12px;
+        padding: 24px;
+        border-top: 4px solid #2D5C8A;
+      ">
+        <h4 style="
+          color: #1B2A4A;
+          font-size: 17px;
+          margin-bottom: 16px;
+        ">
+          پنجره ویزور
+        </h4>
+        <div style="
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        ">
+          {visorDetails.map((detail) => (
+            <div>
+              <div style="
+                color: #B8763E;
+                font-size: 12px;
+                margin-bottom: 2px;
+              ">
+                {detail.label}
+              </div>
+              <div style="
+                color: #1C1C1C;
+                font-size: 13px;
+                line-height: 1.7;
+              ">
+                {detail.value}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- سیستم تهویه -->
+      <div style="
+        background: #F5F0E6;
+        border-radius: 12px;
+        padding: 24px;
+        border-top: 4px solid #5A4A7A;
+      ">
+        <h4 style="
+          color: #1B2A4A;
+          font-size: 17px;
+          margin-bottom: 16px;
+        ">
+          سیستم تهویه بی‌صدا
+        </h4>
+        <div style="
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        ">
+          {hvacDetails.map((detail) => (
+            <div>
+              <div style="
+                color: #B8763E;
+                font-size: 12px;
+                margin-bottom: 2px;
+              ">
+                {detail.label}
+              </div>
+              <div style="
+                color: #1C1C1C;
+                font-size: 13px;
+                line-height: 1.7;
+              ">
+                {detail.value}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    .acoustic-grid {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+
+    .details-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
